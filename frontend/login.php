@@ -1,29 +1,28 @@
 <?php
-$con = mysqli_connect('localhost:3306','root','','student_admission_admin_login');
-if (!$con) {
- die("Connection failed: " . mysqli_connect_error());
-}
-$login = false;
-$showError = false;
-if($_SERVER['REQUEST_METHOD']=='POST'){
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $sql = "SELECT * FROM `login_info` WHERE `email_id` = '$username' AND `passcode`='$password'";
-  $result = mysqli_query($conn, $sql);
-  $num = mysqli_num_rows($result);
-  if($num>0){
-    $arr = mysqli_fetch_assoc($result);
-    $loggedin = true;
-    session_start();
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $username;
-    header('Location: index.php');
-  }
-  else{
-    $showError = "Incorrect Username or Password.";
-  }
-}
+if($_POST)
+{
+    $host="localhost";
+    $user="root";
+    $pass="";
+    $db="admin";
+      $username=$_POST['username'];
+      $password=$_POST['password'];
+        $conn=mysqli_connect($host,$user,$pass,$db);
+            $query="SELECT * from  login_detail where email_id='$username' and passcode='$password'";
+    $result=mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)==1)
+        {
+            session_start();
+            $_SESSION['admin']='true';
+            header('location:index.php');
+        }
+        else{
+            echo 'wrong username or password';
+        }
 
+
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +68,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     <br><br>
-                                    <form action = "" method = "post">
+                                    <form method = "POST">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="username" name='username' aria-describedby="emailHelp"
@@ -80,14 +79,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                                                 id="password" name='password' placeholder="Password">
                                         </div>
                                         <br><br>
-                                        <input type = "submit" value = " submit " id='submit' name ='submit' class="btn btn-primary btn-user btn-block"/><br />
+                                        <input type = "submit" value = " Submit " id='submit' name ='submit' class="btn btn-primary btn-user btn-block"/><br />
                                         
                                             
                                         
                                         <hr>
                                         
                                     </form>
-                                    
                                     
                                 </div>
                             </div>
@@ -114,4 +112,3 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </body>
 
 </html>
-
