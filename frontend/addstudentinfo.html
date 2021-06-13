@@ -65,15 +65,17 @@ hr {
         <h1> Student Information</h1>  
         <hr>  
         <label>SR No </label>   
-        <input type="text" name="middlename" placeholder="SR No" size="15" required />
+        <input type="text" name="srno" placeholder="SR No" size="15" required />
         <label>Student Name </label>   
-        <input type="text" name="firstname" placeholder= "Name" size="15" required />   
+        <input type="text" name="sname" placeholder= "Name" size="15" required /> 
+        <label>Category </label>   
+        <input type="text" name="category" placeholder= "Category" size="15" required />  
         <label> Date of Birth </label>   
-        <input type="date" name="middlename" placeholder="DOB" size="15" required /> <br><br>  
+        <input type="date" name="dob" placeholder="DOB" size="15" required /> <br><br>  
         
         <div>  
           <label>Gender</label>   
-          <select>  
+          <select name='gender'>  
             <option value="Course">Select Option</option>  
             <option value="BCA">Male</option>  
             <option value="BBA">Female</option>  
@@ -83,7 +85,7 @@ hr {
 
         <div>  
           <label>Blood Group</label>   
-          <select> 
+          <select name='blood_group'> 
             <option value="A+">Select Option</option> 
             <option value="A+">A+</option>  
             <option value="A-">A-</option>  
@@ -107,28 +109,27 @@ hr {
         <div>
           <h1> Academic Information</h1>  
           <hr>  
-          <label>SR No </label>   
-          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+
         </div>
 
         <div>  
           <label>Mode of Admission</label>   
-          <select>  
+          <select name='moa'>  
             <option value="Course">Select Option</option>  
-            <option value="BCA">KCET</option>  
-            <option value="BBA">Comed-K</option>  
-            <option value="B.Tech">Management</option>   
+            <option value="KCET">KCET</option>  
+            <option value="Comed-K">Comed-K</option>  
+            <option value="Management">Management</option>   
           </select>  
         </div> 
         
         <div>
           <label>Rank</label>   
-          <input type="number" name="firstname" placeholder= "Rank" size="15" required />    
+          <input type="number" name="rank" placeholder= "Rank" size="15" required />    
         </div>
 
         <div>
           <label>Semester</label>   
-          <select>  
+          <select name='sem'>  
             <option value="Semester">Select Option</option>  
             <option value="1">1</option>  
             <option value="2">2</option>  
@@ -143,7 +144,7 @@ hr {
 
         <div>  
           <label>Branch</label>   
-          <select> 
+          <select name='branch'> 
             <option value="Branch">Select Option</option> 
             <option value="CV">Civil Engineering</option>  
             <option value="ME">Mechanical Engineering</option>  
@@ -165,51 +166,46 @@ hr {
        <div>
           <h1> Payment Information</h1>  
           <hr>  
-          <label>SR No </label>   
-          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+          
           <label>Transaction Number </label>   
-          <input type="text" name="firstname" placeholder= "Transaction Number" size="15" required />   
+          <input type="text" name="Transaction_no" placeholder= "Transaction Number" size="15" required />   
           <label> Paid Date </label>   
-          <input type="date" name="middlename"  size="15" required /> <br><br>  
+          <input type="date" name="Pdate"  size="15" required /> <br><br>  
           <label>Amount Paid</label>   
-          <input type="text" name="phone" placeholder="Amount Paid" size="10" required> 
+          <input type="text" name="amount" placeholder="Amount Paid" size="10" required> 
           <br>
        </div>
 
        <div>
           <h1>Parent Information</h1>  
-          <hr>  
-          <label>SR No </label>   
-          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+          <hr> 
           <label>Father Name </label>   
-          <input type="text" name="firstname" placeholder= "Father Name" size="15" required />
+          <input type="text" name="f_name" placeholder= "Father Name" size="15" required />
           <label>Mother Name </label>   
-          <input type="text" name="firstname" placeholder= "Mother Name" size="15" required />   
+          <input type="text" name="m_name" placeholder= "Mother Name" size="15" required />   
           <label>Contact Number</label>   
           <input type="text" name="phone" placeholder="Contact Numbe" size="10"/ required> 
           <label></label>Annual Income</label>   
-          <input type="number" name="phone" placeholder="Annual Income" size="10"/ required>  
+          <input type="number" name="income" placeholder="Annual Income" size="10"/ required>  
         </div>
         <br><br>
         
         <div>
           <h1> Address Information</h1>  
           <hr>  
-          <label>SR No </label>   
-          <input type="text" name="middlename" placeholder="SR No" size="15" required />
           <label>Door Number</label>   
-          <input type="text" name="firstname" placeholder= "Door No." size="15"/>
+          <input type="text" name="door" placeholder= "Door No." size="15"/>
           <label>Street</label>   
-          <input type="text" name="firstname" placeholder= "Street" size="15"/>
+          <input type="text" name="street" placeholder= "Street" size="15"/>
           <label>City</label>   
-          <input type="text" name="firstname" placeholder= "City" size="15" required/> 
+          <input type="text" name="city" placeholder= "City" size="15" required/> 
           <label>State</label>   
-          <input type="text" name="firstname" placeholder= "State" size="15" required/> 
+          <input type="text" name="state" placeholder= "State" size="15" required/> 
           <label>Pincode</label>   
-          <input type="number" name="firstname" placeholder= "Pincode" size="15" required/> 
+          <input type="number" name="pincode" placeholder= "Pincode" size="15" required/> 
         </div>
         <br><br><br> 
-       <button input type="submit" class="registerbtn" name="submit" value="Submit">Register</button> 
+       <button input type="submit" class="registerbtn" name="submit" value="submit">Register</button> 
     </div>
 
 </form>  
