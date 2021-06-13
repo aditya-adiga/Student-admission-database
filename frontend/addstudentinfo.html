@@ -1,0 +1,217 @@
+<!DOCTYPE html>  
+<html>  
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add Student</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+.container {  
+    padding: 50px;  
+  background-color: lightblue;  
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: orange;  
+  outline: none;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+</head>  
+<body>  
+    <form action="add_info.php">  
+      <div class="container">  
+        <h1> Student Information</h1>  
+        <hr>  
+        <label>SR No </label>   
+        <input type="text" name="middlename" placeholder="SR No" size="15" required />
+        <label>Student Name </label>   
+        <input type="text" name="firstname" placeholder= "Name" size="15" required />   
+        <label> Date of Birth </label>   
+        <input type="date" name="middlename" placeholder="DOB" size="15" required /> <br><br>  
+        
+        <div>  
+          <label>Gender</label>   
+          <select>  
+            <option value="Course">Select Option</option>  
+            <option value="BCA">Male</option>  
+            <option value="BBA">Female</option>  
+            <option value="B.Tech">Others</option>   
+          </select>  
+        </div> 
+
+        <div>  
+          <label>Blood Group</label>   
+          <select> 
+            <option value="A+">Select Option</option> 
+            <option value="A+">A+</option>  
+            <option value="A-">A-</option>  
+            <option value="B+">B+</option>  
+            <option value="B-">B-</option>   
+            <option value="AB+">AB+</option>  
+            <option value="AB-">AB-</option>  
+            <option value="O+">O+</option>  
+            <option value="O-">O-</option>  
+          </select>  
+        </div> 
+        
+        <div>
+          <label>Phone</label>   
+          <input type="text" name="phone" placeholder="phone no." size="10" required>   
+          <label for="email"><b>Email</b></label>  
+          <input type="text" placeholder="Enter Email" name="email" required> 
+        </div>
+        <br>
+  
+        <div>
+          <h1> Academic Information</h1>  
+          <hr>  
+          <label>SR No </label>   
+          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+        </div>
+
+        <div>  
+          <label>Mode of Admission</label>   
+          <select>  
+            <option value="Course">Select Option</option>  
+            <option value="BCA">KCET</option>  
+            <option value="BBA">Comed-K</option>  
+            <option value="B.Tech">Management</option>   
+          </select>  
+        </div> 
+        
+        <div>
+          <label>Rank</label>   
+          <input type="number" name="firstname" placeholder= "Rank" size="15" required />    
+        </div>
+
+        <div>
+          <label>Semester</label>   
+          <select>  
+            <option value="Semester">Select Option</option>  
+            <option value="1">1</option>  
+            <option value="2">2</option>  
+            <option value="3">3</option>   
+            <option value="4">4</option>  
+            <option value="5">5</option>  
+            <option value="6">6</option> 
+            <option value="7">7</option>  
+            <option value="8">8</option>  
+          </select>  
+        </div> 
+
+        <div>  
+          <label>Branch</label>   
+          <select> 
+            <option value="Branch">Select Option</option> 
+            <option value="CV">Civil Engineering</option>  
+            <option value="ME">Mechanical Engineering</option>  
+            <option value="IP">Industrial and Production Engineering</option>  
+            <option value="EEE">Electrical and Electronics Engineering</option>   
+            <option value="ECE">Electronics and Communication Engineering</option>  
+            <option value="IT">Instrumentation Technology</option>  
+            <option value="CSE">Computer Science and Engineering</option>  
+            <option value="EVE">Environmental Engineering</option>  
+            <option value="PS">Polymer Science and Technology</option>   
+            <option value="ISE">Information Science and Engineering</option>  
+            <option value="BT">Biotechnology</option>  
+            <option value="CTM">Construction Technology and Management</option>  
+            <option value="CSBS">Computer Science and Business Systems</option> 
+          </select>  
+        </div> 
+       <br>
+
+       <div>
+          <h1> Payment Information</h1>  
+          <hr>  
+          <label>SR No </label>   
+          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+          <label>Transaction Number </label>   
+          <input type="text" name="firstname" placeholder= "Transaction Number" size="15" required />   
+          <label> Paid Date </label>   
+          <input type="date" name="middlename"  size="15" required /> <br><br>  
+          <label>Amount Paid</label>   
+          <input type="text" name="phone" placeholder="Amount Paid" size="10" required> 
+          <br>
+       </div>
+
+       <div>
+          <h1>Parent Information</h1>  
+          <hr>  
+          <label>SR No </label>   
+          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+          <label>Father Name </label>   
+          <input type="text" name="firstname" placeholder= "Father Name" size="15" required />
+          <label>Mother Name </label>   
+          <input type="text" name="firstname" placeholder= "Mother Name" size="15" required />   
+          <label>Contact Number</label>   
+          <input type="text" name="phone" placeholder="Contact Numbe" size="10"/ required> 
+          <label></label>Annual Income</label>   
+          <input type="number" name="phone" placeholder="Annual Income" size="10"/ required>  
+        </div>
+        <br><br>
+        
+        <div>
+          <h1> Address Information</h1>  
+          <hr>  
+          <label>SR No </label>   
+          <input type="text" name="middlename" placeholder="SR No" size="15" required />
+          <label>Door Number</label>   
+          <input type="text" name="firstname" placeholder= "Door No." size="15"/>
+          <label>Street</label>   
+          <input type="text" name="firstname" placeholder= "Street" size="15"/>
+          <label>City</label>   
+          <input type="text" name="firstname" placeholder= "City" size="15" required/> 
+          <label>State</label>   
+          <input type="text" name="firstname" placeholder= "State" size="15" required/> 
+          <label>Pincode</label>   
+          <input type="number" name="firstname" placeholder= "Pincode" size="15" required/> 
+        </div>
+        <br><br><br> 
+       <button input type="submit" class="registerbtn" name="submit" value="Submit">Register</button> 
+    </div>
+
+</form>  
+</body>  
+</html> 
