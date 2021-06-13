@@ -1,5 +1,6 @@
 <?php
 include_once 'db.php';
+
 if(isset($_POST['submit']))
 {    
      $srno = $_POST['srno'];
