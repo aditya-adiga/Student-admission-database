@@ -19,7 +19,7 @@ if(!$_SESSION['admin'])
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Add Student</title>
+    <title>Add Student - Academic Information</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -40,10 +40,10 @@ if(!$_SESSION['admin'])
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">STUDENT INFORMATION</h2>
+                    <h2 class="title">ACADEMIC INFORMATION</h2>
                 </div>
                 <div class="card-body">
-                    <form action="studentinfosubmit.php" method="POST">
+                    <form action="academicsubmit.php" method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
                             <div class="value">
@@ -57,35 +57,50 @@ if(!$_SESSION['admin'])
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Student Name</div>
+                            <div class="name">Mode of Admission</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="sname" >
+                                <div class="row row-space">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="mod">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option>KCET</option>
+                                            <option>Comed-k</option>
+                                            <option>Management Quota</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Date of Birth</div>
+
+                        <div class="form-row m-b-55">
+                            <div class="name">Student Rank</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date">
+                                            <input class="input--style-5" type="number" name="srank">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="form-row">
-                            <div class="name">Gender</div>
+                            <div class="name">Semester</div>
                             <div class="value">
-                                <div class="input-group">
+                                <div class="row row-space">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
+                                        <select name="sem">
                                             <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Others</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -93,60 +108,31 @@ if(!$_SESSION['admin'])
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Blood Group</div>
+                            <div class="name">Branch</div>
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bg">
+                                        <select name="branch">
                                             <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
+                                            <option value="CV">Civil Engineering</option>  
+                                            <option value="ME">Mechanical Engineering</option>  
+                                            <option value="IP">Industrial and Production Engineering</option>  
+                                            <option value="EEE">Electrical and Electronics Engineering</option>   
+                                            <option value="ECE">Electronics and Communication Engineering</option>  
+                                            <option value="IT">Instrumentation Technology</option>  
+                                            <option value="CSE">Computer Science and Engineering</option>  
+                                            <option value="EVE">Environmental Engineering</option>  
+                                            <option value="PS">Polymer Science and Technology</option>   
+                                            <option value="ISE">Information Science and Engineering</option>  
+                                            <option value="BT">Biotechnology</option>  
+                                            <option value="CTM">Construction Technology and Management</option>  
+                                            <option value="CSBS">Computer Science and Business Systems</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Category</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="category" >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row m-b-55">
-                            <div class="name">Phone</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row m-b-55">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="mailid">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
 
 
 

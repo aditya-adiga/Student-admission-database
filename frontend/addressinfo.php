@@ -19,7 +19,7 @@ if(!$_SESSION['admin'])
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Add Student</title>
+    <title>Add Student - Address Information</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -40,10 +40,10 @@ if(!$_SESSION['admin'])
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">STUDENT INFORMATION</h2>
+                    <h2 class="title">ADDRESS INFORMATION</h2>
                 </div>
                 <div class="card-body">
-                    <form action="studentinfosubmit.php" method="POST">
+                    <form action="addresssubmit.php" method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
                             <div class="value">
@@ -56,102 +56,69 @@ if(!$_SESSION['admin'])
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Student Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="sname" >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Date of Birth</div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Door Number</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date">
+                                            <input class="input--style-5" type="textr" name="dno">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Gender</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
-                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Others</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Blood Group</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bg">
-                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Category</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="category" >
                                 </div>
                             </div>
                         </div>
                         <div class="form-row m-b-55">
-                            <div class="name">Phone</div>
+                            <div class="name">Street</div>
                             <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
+                                <div class="row row-space">
+                                    <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone">
+                                            <input class="input--style-5" type="text" name="street">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-row m-b-55">
-                            <div class="name">Email</div>
+                            <div class="name">City</div>
                             <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
+                                <div class="row row-space">
+                                    <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="mailid">
+                                            <input class="input--style-5" type="text" name="city">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
+                        <div class="form-row m-b-55">
+                            <div class="name">State</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="state">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Pin Code</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="pincode">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit" name="submit">Next</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" name="submit">Submit</button>
                         </div>
                     </form>
                 </div>

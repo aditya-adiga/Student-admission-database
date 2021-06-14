@@ -18,7 +18,7 @@ if(!$_SESSION['admin'])
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home - Student Admission System</title>
+    <title>Search</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,6 +41,7 @@ if(!$_SESSION['admin'])
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+
                 <div class="sidebar-brand-text mx-3">Home</div>
             </a>
 
@@ -48,7 +49,7 @@ if(!$_SESSION['admin'])
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -59,7 +60,7 @@ if(!$_SESSION['admin'])
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Operations
+                OPERATIONS
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -72,7 +73,7 @@ if(!$_SESSION['admin'])
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="search.php">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Search Students</span>
@@ -80,14 +81,13 @@ if(!$_SESSION['admin'])
             </li>
 
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="tables.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Branch Details</span>
-                </a>
-            </li>
-            
 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tables.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Branch Details</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -96,9 +96,6 @@ if(!$_SESSION['admin'])
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
-            <!-- Sidebar Message -->
-            
 
         </ul>
         <!-- End of Sidebar -->
@@ -119,6 +116,7 @@ if(!$_SESSION['admin'])
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -130,6 +128,9 @@ if(!$_SESSION['admin'])
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
+
+
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -147,66 +148,15 @@ if(!$_SESSION['admin'])
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    </div>
+                    <h1 class="h3 mb-4 text-gray-800">Search Here</h1>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                No. of Students</div>
-
-
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-
-<?php
-$con = mysqli_connect("localhost","root","",'home');
-if (!$con) {
-  die('Could not connect: ' . mysql_error());
-}
-
-$query = mysqli_query($con,"SELECT * FROM student_info");
-
-$number=mysqli_num_rows($query);
-echo $number;
-?>
-</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
+
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -239,6 +189,40 @@ echo $number;
         </div>
     </div>
 
+    <div id="searchbar" class="dataTables_filter">
+        <label>
+            <br>
+            <form action = "#" id="searchsrno"></form>
+                <input type="number" class="form-control form-control-sm" placeholder="Enter SR No" aria-controls="dataTable">
+                <br>
+                <input type="submit" name="register" class="register" value="Enter">
+            </form>
+        </label>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4" id="nameofstud">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            SR NO : </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Name : </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="editstudentinfo.html" id="editpos">
+        <img src="draw.png" height="20px" width="20px">
+    </a>
+
+    <a href="#" id="delrec">
+        <img src="delete.png" height="20px" width="20px">
+    </a>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -248,7 +232,6 @@ echo $number;
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
 
 </body>
 
