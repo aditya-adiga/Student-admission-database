@@ -87,7 +87,7 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.php">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Branch Details</span></a>
             </li>
@@ -229,7 +229,7 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["BLOOD_GROUP"]; ?></td>
                                             <td><?php echo $row["EMAIL_ID"]; ?></td>
                                             <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
-                                            <td><a href="#"><img src="delete.png" height="20px" width="20px"></a></td>   
+                                            <td><a href="delete.php?action='delete'&id=<?php echo $row['SR_NO'] ?> "><img src="delete.png" height="20px" width="20px" ></a></td>   
                                         </tr>
                                         <?php }
                                         } else {
