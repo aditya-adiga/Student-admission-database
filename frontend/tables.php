@@ -67,7 +67,7 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="studentinfo.html">
+                <a class="nav-link collapsed" href="studentinfo.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Add Students</span>
                 </a>

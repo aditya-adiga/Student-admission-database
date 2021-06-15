@@ -87,7 +87,7 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Branch Details</span></a>
             </li>
