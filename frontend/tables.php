@@ -67,7 +67,7 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="studentinfo.php">
+                <a class="nav-link collapsed" href="studentinfo.html">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Add Students</span>
                 </a>
@@ -189,43 +189,48 @@ if(!$_SESSION['admin'])
                                             <th>Head of the Department</th>
                                             <th>Contact Number</th>
                                             <th>Email</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php
-$con = mysqli_connect("localhost","root","",'home');
-if (!$con) {
-  die('Could not connect: ' . mysql_error());
-}
+                                        <?php
+                                          $servername = "localhost";
+                                          $username = "root";
+                                          $password = "";
+                                          $dbname = "home";
 
-$query = mysqli_query($con,"SELECT * FROM branch_info");
-$result=mysqli_query($con,$query);
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-<tr>
-    <td><?php echo $row["BRANCH"]; ?></td>
-    <td><?php echo $row["HOD_NAME"]; ?></td>
-    <td><?php echo $row["CONTACT_NUMBER"]; ?></td>
-    <td><?php echo $row["EMAIL_ID"]; ?></td>
-    <td><?php echo $row["DEPARTMENT"]; ?></td>
-</tr>
-<?php
-$i++;
-}
-?>
-</table>
- <?php
-}
-else{
-    echo "No result found";
-}
-mysqli_close($conn);
-?>
-        
+                                          // Create connection
+                                          $conn = new mysqli($servername, $username, $password, $dbname);
+                                          // Check connection
+                                          if ($conn->connect_error) {
+                                          die("Connection failed: " . $conn->connect_error);
+                                          }
 
-</tbody>
+                                          $sql = "SELECT BRANCH, HOD_NAME, CONTACT_NUMBER, EMAIL_ID, DEPARTMENT FROM branch_info";
+                                          $result = $conn->query($sql);
+
+                                          if ($result->num_rows > 0) {
+                                          // output data of each row
+                                          while($row = mysqli_fetch_array($result)) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row["BRANCH"]; ?></td>
+                                            <td><?php echo $row["HOD_NAME"]; ?></td>
+                                            <td><?php echo $row["CONTACT_NUMBER"]; ?></td>
+                                            <td><?php echo $row["EMAIL_ID"]; ?></td>
+                                            <td><?php echo $row["DEPARTMENT"]; ?></td>
+                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
+                                            <td><a href="#"><img src="delete.png" height="20px" width="20px"></a></td>   
+                                        </tr>
+                                        <?php }
+                                        } else {
+                                          echo "0 results";
+                                        }
+                                        $conn->close();
+                                    ?> 
+                                    </tfoot> 
                                 </table>
                             </div>
                         </div>
