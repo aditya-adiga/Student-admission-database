@@ -185,13 +185,11 @@ if(!$_SESSION['admin'])
                                     <thead>
                                         <tr>
                                             <th>Branch</th>
-                                            <th>Department</th>
-                                            <th>Head of the Department</th>
+                                            <th>Head of the Departmentt</th>
                                             <th>Contact Number</th>
-                                            <th>Email</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                           
+                                            <th>EMAIL</th>
+                                            <th>Department</th>
+                                        
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -220,9 +218,7 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["HOD_NAME"]; ?></td>
                                             <td><?php echo $row["CONTACT_NUMBER"]; ?></td>
                                             <td><?php echo $row["EMAIL_ID"]; ?></td>
-                                            <td><?php echo $row["DEPARTMENT"]; ?></td>
-                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
-                                            <td><a href="#"><img src="delete.png" height="20px" width="20px"></a></td>   
+                                            <td><?php echo $row["DEPARTMENT"]; ?></td> 
                                         </tr>
                                         <?php }
                                         } else {
