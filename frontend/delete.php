@@ -26,7 +26,7 @@ if(mysqli_query($link,$sql1))
     
     echo "academic info deleted";
 }
-else{
+else{ 
 
     echo "unsuccessful";
 }
@@ -60,7 +60,7 @@ else{
 if(mysqli_query($link,$sql5))
 {
     
-    header('location:search.php');
+    header('location:studentdisplay.php');
 }
 else{
 

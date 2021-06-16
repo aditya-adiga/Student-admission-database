@@ -238,8 +238,9 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["CATEGORY"]; ?></td>
                                             <td><?php echo $row["BLOOD_GROUP"]; ?></td>
                                             <td><?php echo $row["EMAIL_ID"]; ?></td>
-                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
-                                            <td><a href="delete.php?action='delete'&id=<?php echo $row['SR_NO'] ?> "><img src="delete.png" height="20px" width="20px" ></a></td>   
+                                            <td><a href="editstudentinfo.php?&id=<?php echo $row['SR_NO'] ?> "><img src="draw.png" height="20px" width="20px" ></a></td> 
+                                            <td><a href="delete.php?action='delete'&id=<?php echo $row['SR_NO'] ?> "><img src="delete.png" height="20px" width="20px" ></a></td>  
+                                             
                                         </tr>
                                         <?php }
                                         } else {

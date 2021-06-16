@@ -86,7 +86,7 @@ if(!$_SESSION['admin'])
                         </div>
 
                         <div class="form-row m-b-55">
-                            <div class="name">Amount Paid</div>
+                            <div class="name">Annual Income</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
