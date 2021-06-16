@@ -199,7 +199,7 @@ if(!$_SESSION['admin'])
                                             <th>Transaction Number</th>
                                             <th>Paid Date</th>
                                             <th>Amount Paid</th>
-                                            <th>Edit</th>
+                                            
                                               
                                         </tr>
                                     </thead>
@@ -229,7 +229,6 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["TRANSACTION_NO"]; ?></td>
                                             <td><?php echo $row["PAID_DATE"]; ?></td>
                                             <td><?php echo $row["FEE_PAID"]; ?></td>
-                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
                                                
                                         </tr>
                                         <?php }

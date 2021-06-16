@@ -233,7 +233,7 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["CITY"]; ?></td>
                                             <td><?php echo $row["STATE_"]; ?></td>
                                             <td><?php echo $row["PIN_CODE"]; ?></td>
-                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
+                                            <td><a href="editaddressinfo.php?&id=<?php echo $row['SR_NO'] ?> "><img src="draw.png" height="20px" width="20px"></a></td>
                                             
                                         </tr>
                                         <?php }

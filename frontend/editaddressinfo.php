@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(!$_SESSION['admin'])
+{
+    header('location:login.php');
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +40,7 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">EDIT STUDENT INFORMATION</h2>
+                    <h2 class="title">EDIT ADDRESS INFORMATION</h2>
                 </div>
                 <?php
 $server='localhost';
@@ -42,13 +49,13 @@ $password='';
 $dbname = "home";
 $conn=mysqli_connect($server,$username,$password,$dbname);
 $id=$_GET['id'];
-$sql="SELECT * FROM student_info
+$sql="SELECT * FROM address_info
 WHERE SR_NO = $id ";
 $result = mysqli_query($conn, $sql);  
 $row = mysqli_fetch_array($result);
 ?>
                 <div class="card-body">
-                    <form  method="POST">
+                    <form action="addresssubmit.php" method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
                             <div class="value">
@@ -61,130 +68,99 @@ $row = mysqli_fetch_array($result);
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Student Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="sname" value=<?php echo $row["STUDENT_NAME"]; ?>>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Date of Birth</div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Door Number</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date" value=<?php echo $row["DOB"]; ?>>
+                                            <input class="input--style-5" type="textr" name="dno" value=<?php echo $row["DOOR_NO"]; ?>>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Gender</div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Street</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender" ?>>
-                                            <option value=<?php echo $row["GENDER"];?>><?php echo $row["GENDER"];?></option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Others</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="street" value=<?php echo $row["STREET"]; ?>>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Blood Group</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bg" >
-                                            <option value=<?php echo $row["BLOOD_GROUP"]; ?>><?php echo $row["BLOOD_GROUP"]; ?></option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Category</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="category"value=<?php echo $row["CATEGORY"]; ?> >
                                 </div>
                             </div>
                         </div>
                         <div class="form-row m-b-55">
-                            <div class="name">Phone</div>
+                            <div class="name">City</div>
                             <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
+                                <div class="row row-space">
+                                    <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone" value=<?php echo $row["CONTACT_NUMBER"]; ?>>
+                                            <input class="input--style-5" type="text" name="city" value=<?php echo $row["CITY"]; ?>>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">State</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="state" value=<?php echo $row["STATE_"]; ?>>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Pin Code</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="pincode" value=<?php echo $row["PIN_CODE"]; ?>>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-row m-b-55">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="mailid" value=<?php echo $row["EMAIL_ID"]; ?>>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit" name="submit">CONFIRM CHANGES</button>
                         </div>
-                        
-
-                        <?php 
+                        <?php
                         if(isset($_POST['submit'])) {//Check it is coming from a form
                             $srno = $_POST["srno"]; 
-                            $sname = $_POST["sname"];
-                            $date = $_POST["date"];
-                            $gender = $_POST["gender"];
-                            $bg = $_POST["bg"];
-                            $category = $_POST["category"];
-                            $phone = $_POST["phone"];
-                            $mail_id = $_POST["mailid"];
-                            $query = "UPDATE student_info   
-                            SET STUDENT_NAME='$sname',   
-                            DOB='$date',   
-                            GENDER='$gender',   
-                            CONTACT_NUMBER = '$phone',   
-                            CATEGORY = '$category',  
-                            BLOOD_GROUP='$bg',
-                            EMAIL_ID='$mail_id'
+                            $dno = $_POST["dno"];
+                            $street = $_POST["street"];
+                            $city = $_POST["city"];
+                            $state = $_POST["state"];
+                            $pincode = $_POST["pincode"];
+                            
+                            $query = "UPDATE address_info   
+                            SET DOOR_NO='$dno',   
+                            STREET='$street',      
+                            CITY = '$city',   
+                            STATE_ = '$state',
+                            PIN_CODE = '$pincode',
                             WHERE SR_NO='$srno'";
-                            if(mysqli_query($conn,$query)) {
-                                echo "<script>window.location.href='studentdisplay.php'</script>";
+                            
+                            if($conn->query($query) === TRUE) {
                                 echo "New record created successfully";
-                              } 
-                              else {
+                                echo "<script>window.location.href='addressdisplay.php'</script>";
+                              } else {
                                 echo "Error: " . $query . "<br>" . mysqli_error($conn);
                               }
-                                        
+                            
+                              mysqli_close($conn);
+                                    
                         }
-                        mysqli_close($conn);
                         ?>
                     </form>
                     <br>

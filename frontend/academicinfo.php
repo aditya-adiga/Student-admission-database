@@ -45,12 +45,13 @@ if(!$_SESSION['admin'])
                 <div class="card-body">
                     <form action="academicsubmit.php" method="POST">
                         <div class="form-row m-b-55">
-                            <div class="name">Sr No</div>
+                        <?php $id=$_GET['id'];?>
+                            <div class="name">SR NO</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno">
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
                                         </div>
                                     </div>
                                 </div>

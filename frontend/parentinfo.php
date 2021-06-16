@@ -45,12 +45,13 @@ if(!$_SESSION['admin'])
                 <div class="card-body">
                     <form action="parentsubmit.php" method="POST">
                         <div class="form-row m-b-55">
+                        <?php $id=$_GET['id'];?>
                             <div class="name">Sr No</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno">
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
                                         </div>
                                     </div>
                                 </div>

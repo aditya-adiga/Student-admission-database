@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(!$_SESSION['admin'])
+{
+    header('location:login.php');
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +40,7 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">EDIT STUDENT INFORMATION</h2>
+                    <h2 class="title">EDIT ACADEMIC INFORMATION</h2>
                 </div>
                 <?php
 $server='localhost';
@@ -42,13 +49,13 @@ $password='';
 $dbname = "home";
 $conn=mysqli_connect($server,$username,$password,$dbname);
 $id=$_GET['id'];
-$sql="SELECT * FROM student_info
+$sql="SELECT * FROM academic_info
 WHERE SR_NO = $id ";
 $result = mysqli_query($conn, $sql);  
 $row = mysqli_fetch_array($result);
 ?>
                 <div class="card-body">
-                    <form  method="POST">
+                    <form action="#" method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
                             <div class="value">
@@ -62,35 +69,50 @@ $row = mysqli_fetch_array($result);
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Student Name</div>
+                            <div class="name">Mode of Admission</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="sname" value=<?php echo $row["STUDENT_NAME"]; ?>>
+                                <div class="row row-space">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="mode">
+                                            <option value=<?php echo $row["MODE_OF_ADMISSION"];?> ><?php echo $row["MODE_OF_ADMISSION"];?></option>
+                                            <option>KCET</option>
+                                            <option>Comed-k</option>
+                                            <option>Management Quota</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Date of Birth</div>
+
+                        <div class="form-row m-b-55">
+                            <div class="name">Student Rank</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date" value=<?php echo $row["DOB"]; ?>>
+                                            <input class="input--style-5" type="number" name="srank" value=<?php echo $row["STUDENT_RANK"]; ?>>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="form-row">
-                            <div class="name">Gender</div>
+                            <div class="name">Semester</div>
                             <div class="value">
-                                <div class="input-group">
+                                <div class="row row-space">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender" ?>>
-                                            <option value=<?php echo $row["GENDER"];?>><?php echo $row["GENDER"];?></option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Others</option>
+                                        <select name="sem">
+                                            <option value=<?php echo $row["SEMESTER"]; ?>><?php echo $row["SEMESTER"]; ?></option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -98,93 +120,61 @@ $row = mysqli_fetch_array($result);
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Blood Group</div>
+                            <div class="name">Branch</div>
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bg" >
-                                            <option value=<?php echo $row["BLOOD_GROUP"]; ?>><?php echo $row["BLOOD_GROUP"]; ?></option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
+                                        <select name="branch">
+                                            <option value=<?php echo $row["BRANCH"]; ?>><?php echo $row["BRANCH"]; ?></option>
+                                            <option value="CV">Civil Engineering</option>  
+                                            <option value="ME">Mechanical Engineering</option>  
+                                            <option value="IP">Industrial and Production Engineering</option>  
+                                            <option value="EEE">Electrical and Electronics Engineering</option>   
+                                            <option value="ECE">Electronics and Communication Engineering</option>  
+                                            <option value="IT">Instrumentation Technology</option>  
+                                            <option value="CSE">Computer Science and Engineering</option>  
+                                            <option value="EVE">Environmental Engineering</option>  
+                                            <option value="PS">Polymer Science and Technology</option>   
+                                            <option value="ISE">Information Science and Engineering</option>  
+                                            <option value="BT">Biotechnology</option>  
+                                            <option value="CTM">Construction Technology and Management</option>  
+                                            <option value="CSBS">Computer Science and Business Systems</option>
                                         </select>
                                         <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Category</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="category"value=<?php echo $row["CATEGORY"]; ?> >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row m-b-55">
-                            <div class="name">Phone</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone" value=<?php echo $row["CONTACT_NUMBER"]; ?>>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-row m-b-55">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="mailid" value=<?php echo $row["EMAIL_ID"]; ?>>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit" name="submit">CONFIRM CHANGES</button>
                         </div>
-                        
-
-                        <?php 
+                        <?php
                         if(isset($_POST['submit'])) {//Check it is coming from a form
                             $srno = $_POST["srno"]; 
-                            $sname = $_POST["sname"];
-                            $date = $_POST["date"];
-                            $gender = $_POST["gender"];
-                            $bg = $_POST["bg"];
-                            $category = $_POST["category"];
-                            $phone = $_POST["phone"];
-                            $mail_id = $_POST["mailid"];
-                            $query = "UPDATE student_info   
-                            SET STUDENT_NAME='$sname',   
-                            DOB='$date',   
-                            GENDER='$gender',   
-                            CONTACT_NUMBER = '$phone',   
-                            CATEGORY = '$category',  
-                            BLOOD_GROUP='$bg',
-                            EMAIL_ID='$mail_id'
+                            $mode = $_POST["mode"];
+                            $srank = $_POST["srank"];
+                            $sem = $_POST["sem"];
+                            $branch = $_POST["branch"];
+                            $query = "UPDATE academic_info   
+                            SET MODE_OF_ADMISSION='$mode',   
+                            STUDENT_RANK='$srank',   
+                            SEMESTER='$sem',   
+                            BRANCH = '$branch'   
                             WHERE SR_NO='$srno'";
-                            if(mysqli_query($conn,$query)) {
-                                echo "<script>window.location.href='studentdisplay.php'</script>";
-                                echo "New record created successfully";
-                              } 
-                              else {
+                            
+                            if($conn->query($query) === TRUE) {
+                                echo "<script>window.location.href='academicdisplay.php'</script>";
+                                header('location: academicdisplay.php');
+                              } else {
                                 echo "Error: " . $query . "<br>" . mysqli_error($conn);
                               }
-                                        
+                            
+                              mysqli_close($conn);
+                                    
                         }
-                        mysqli_close($conn);
                         ?>
                     </form>
                     <br>

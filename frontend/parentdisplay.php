@@ -231,7 +231,7 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["MOTHER_NAME"]; ?></td>
                                             <td><?php echo $row["CONTACT_NO"]; ?></td>
                                             <td><?php echo $row["ANNUAL_INCOME"]; ?></td>
-                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
+                                            <td><a href="editparentinfo.php?&id=<?php echo $row['SR_NO'] ?> "><img src="draw.png" height="20px" width="20px" ></a></td>
                                                
                                         </tr>
                                         <?php }

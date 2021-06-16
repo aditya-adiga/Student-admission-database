@@ -43,6 +43,7 @@ if(!$_SESSION['admin'])
                     <h2 class="title">ADDRESS INFORMATION</h2>
                 </div>
                 <div class="card-body">
+                <?php $id=$_GET['id'];?>
                     <form action="addresssubmit.php" method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
@@ -50,7 +51,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno">
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
                                         </div>
                                     </div>
                                 </div>

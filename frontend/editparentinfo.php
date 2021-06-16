@@ -19,7 +19,7 @@ if(!$_SESSION['admin'])
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Add Student - Payment Information</title>
+    <title>Add Student</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -40,38 +40,57 @@ if(!$_SESSION['admin'])
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">PAYMENT INFORMATION</h2>
+                    <h2 class="title">EDIT PARENT INFORMATION</h2>
                 </div>
+                <?php
+$server='localhost';
+$username='root';
+$password='';
+$dbname = "home";
+$conn=mysqli_connect($server,$username,$password,$dbname);
+$id=$_GET['id'];
+$sql="SELECT * FROM parent_info
+WHERE SR_NO = $id ";
+$result = mysqli_query($conn, $sql);  
+$row = mysqli_fetch_array($result);
+?>
                 <div class="card-body">
-                <?php $id=$_GET['id'];?>
-                    <form action="paymentsubmit.php" method="POST">
+                    <form method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $row["SR_NO"]; ?>>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Transaction Number</div>
+                            <div class="name">Father Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="tno" >
+                                    <input class="input--style-5" type="text" name="fname" value=<?php echo $row["FATHER_NAME"]; ?>>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Paid Date</div>
+                            <div class="name">Mother Name</div>
                             <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mname" value=<?php echo $row["MOTHER_NAME"]; ?>>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date">
+                                            <input class="input--style-5" type="text" name="phone" value=<?php echo $row["CONTACT_NO"]; ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -79,27 +98,54 @@ if(!$_SESSION['admin'])
                         </div>
 
                         <div class="form-row m-b-55">
-                            <div class="name">Amount Paid</div>
+                            <div class="name">Annual Income</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="amount">
+                                            <input class="input--style-5" type="number" name="income" value=<?php echo $row["ANNUAL_INCOME"]; ?>>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
 
 
 
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit" name="submit">Next</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" name="submit">CONFIRM CHANGES</button>
                         </div>
+                        <?php
+                        if(isset($_POST['submit'])) {//Check it is coming from a form
+                            $srno = $_POST["srno"]; 
+                            $fname = $_POST["fname"];
+                            $mname = $_POST["mname"];
+                            $phone = $_POST["phone"];
+                            $income = $_POST["income"];
+                            
+                            $query = "UPDATE parent_info   
+                            SET FATHER_NAME='$fname',   
+                            MOTHER_NAME='$mname',      
+                            CONTACT_NO = '$phone',   
+                            ANNUAL_INCOME = '$income'                            
+                            WHERE SR_NO='$srno'";
+                            
+                            if($conn->query($query) === TRUE) {
+                                echo "New record created successfully";
+                                echo "<script>window.location.href='parentdisplay.php'</script>";
+                              } else {
+                                echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                              }
+                            
+                              mysqli_close($conn);
+                                    
+                        }
+                        ?>
                     </form>
                     <br>
-                    <a href="index.php" class="name">Return to Dashboard</a>
+                    <a href="index.php" class="name">Return to Dashboard</a> 
+                    
                 </div>
             </div>
         </div>

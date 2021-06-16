@@ -17,7 +17,7 @@ if(isset($_POST['submit'])) {//Check it is coming from a form
     
     if ($conn->query($query) === TRUE) {
         echo "New record created successfully";
-        header('location: addressinfo.php');
+        echo "<script>window.location.href='addressinfo.php ? id=$srno'</script>";
       } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
       }

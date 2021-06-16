@@ -231,7 +231,7 @@ if(!$_SESSION['admin'])
                                             <td><?php echo $row["STUDENT_RANK"]; ?></td>
                                             <td><?php echo $row["SEMESTER"]; ?></td>
                                             <td><?php echo $row["BRANCH"]; ?></td>
-                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
+                                            <td><a href="editacademicinfo.php?&id=<?php echo $row['SR_NO'] ?> "><img src="draw.png" height="20px" width="20px"></a></td>
                                                
                                         </tr>
                                         <?php }

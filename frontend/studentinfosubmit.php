@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {//Check it is coming from a form
     
     if ($conn->query($query) === TRUE) {
         echo "New record created successfully";
-        header('location: academicinfo.php');
+        echo "<script>window.location.href='academicinfo.php ? id=$srno'</script>";
       } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
       }
