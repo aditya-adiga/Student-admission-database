@@ -8,7 +8,7 @@ if($_POST)
       $username=$_POST['username'];
       $password=$_POST['password'];
         $conn=mysqli_connect($host,$user,$pass,$db);
-            $query="SELECT * from  login_detail where email_id='$username' and passcode='$password'";
+        $query="SELECT * from  login_detail where email_id='$username' and passcode='$password'";
     $result=mysqli_query($conn,$query);
         if(mysqli_num_rows($result)==1)
         {

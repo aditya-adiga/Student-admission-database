@@ -7,6 +7,7 @@ if(!$_SESSION['admin'])
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,7 @@ if(!$_SESSION['admin'])
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Branch Details</title>
+    <title>Student Details</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -67,7 +68,7 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="studentinfo.php">
+                <a class="nav-link collapsed" href="studentinfo.html">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Add Students</span>
                 </a>
@@ -76,21 +77,10 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Student Information</span>
+                <a class="nav-link collapsed" href="search.php" >
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Search Students</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="studentdisplay.php">Student Information</a>
-                        <a class="collapse-item" href="academicdisplay.php">Academic Information</a>
-                        <a class="collapse-item" href="paymentdisplay.php">Payment Information</a>
-                        <a class="collapse-item" href="parentdisplay.php">Parent Information</a>
-                        <a class="collapse-item" href="addressdisplay.php">Address Information</a>
-                    </div>
-                </div>
             </li>
 
 
@@ -100,7 +90,7 @@ if(!$_SESSION['admin'])
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Branch Details</span></a>
+                    <span>Student Details</span></a>
             </li>
 
             <!-- Divider -->
@@ -183,63 +173,70 @@ if(!$_SESSION['admin'])
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">BRANCH DETAILS</h1>
+                    <h1 class="h3 mb-2 text-gray-800">STUDENT DETAILS</h1>
                     <br>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Branch Table</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Student Table</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Branch</th>
-                                            <th>Head of the Department</th>
+                                            <th>Sr No</th>
+                                            <th>Name</th>
+                                            <th>Date of Birth</th>
+                                            <th>Gender</th>
                                             <th>Contact Number</th>
+                                            <th>Category</th>
+                                            <th>Blood Group</th>
                                             <th>Email ID</th>
-                                            <th>Department</th>
-
-                                           
+                                            <th colspan="2">Operations</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                          $servername = "localhost";
-                                          $username = "root";
-                                          $password = "";
-                                          $dbname = "home";
+                                    <?php
+                                      $servername = "localhost";
+                                      $username = "root";
+                                      $password = "";
+                                      $dbname = "home";
 
-                                          // Create connection
-                                          $conn = new mysqli($servername, $username, $password, $dbname);
-                                          // Check connection
-                                          if ($conn->connect_error) {
-                                          die("Connection failed: " . $conn->connect_error);
-                                          }
+                                      // Create connection
+                                      $conn = new mysqli($servername, $username, $password, $dbname);
+                                      // Check connection
+                                      if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                      }
 
-                                          $sql = "SELECT BRANCH, HOD_NAME, CONTACT_NUMBER, EMAIL_ID, DEPARTMENT FROM branch_info";
-                                          $result = $conn->query($sql);
+                                      $sql = "SELECT * FROM student_info";
+                                      $result = $conn->query($sql);
 
-                                          if ($result->num_rows > 0) {
-                                          // output data of each row
-                                          while($row = mysqli_fetch_array($result)) {
+                                      if ($result->num_rows > 0) {
+                                      // output data of each row
+                                      while($row = mysqli_fetch_array($result)) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $row["BRANCH"]; ?></td>
-                                            <td><?php echo $row["HOD_NAME"]; ?></td>
+                                            <td><?php echo $row["SR_NO"]; ?></td>
+                                            <td><?php echo $row["STUDENT_NAME"]; ?></td>
+                                            <td><?php echo $row["DOB"]; ?></td>
+                                            <td><?php echo $row["GENDER"]; ?></td>
                                             <td><?php echo $row["CONTACT_NUMBER"]; ?></td>
+                                            <td><?php echo $row["CATEGORY"]; ?></td>
+                                            <td><?php echo $row["BLOOD_GROUP"]; ?></td>
                                             <td><?php echo $row["EMAIL_ID"]; ?></td>
-                                            <td><?php echo $row["DEPARTMENT"]; ?></td>
-                                              
+                                            <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
+                                            <td><a href="#"><img src="delete.png" height="20px" width="20px"></a></td>
                                         </tr>
-                                        <?php }
-                                        } else {
+                                     <?php }
+                                      } else {
                                           echo "0 results";
                                         }
-                                        $conn->close();
+                                      $conn->close();
                                     ?> 
-                                    </tfoot> 
+                                    
                                 </table>
                             </div>
                         </div>

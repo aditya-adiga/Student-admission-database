@@ -140,6 +140,8 @@ if(!$_SESSION['admin'])
                             <button class="btn btn--radius-2 btn--red" type="submit" name="submit">Next</button>
                         </div>
                     </form>
+                    <br>
+                    <a href="index.php"  class="name">Return to Dashboard</a>
                 </div>
             </div>
         </div>

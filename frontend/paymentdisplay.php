@@ -18,7 +18,7 @@ if(!$_SESSION['admin'])
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Branch Details</title>
+    <title>Student Details</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -76,10 +76,21 @@ if(!$_SESSION['admin'])
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="search.php" >
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Search Students</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Student Information</span>
                 </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                    <a class="collapse-item" href="studentdisplay.php">Student Information</a>
+                        <a class="collapse-item" href="academicdisplay.php">Academic Information</a>
+                        <a class="collapse-item" href="paymentdisplay.php">Payment Information</a>
+                        <a class="collapse-item" href="parentdisplay.php">Parent Information</a>
+                        <a class="collapse-item" href="addressdisplay.php">Address Information</a>
+                    </div>
+                </div>
             </li>
 
 
@@ -172,7 +183,7 @@ if(!$_SESSION['admin'])
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">STUDENT DETAILS</h1>
+                    <h1 class="h3 mb-2 text-gray-800">PAYMENT DETAILS</h1>
                     <br>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -185,17 +196,11 @@ if(!$_SESSION['admin'])
                                     <thead>
                                         <tr>
                                             <th>Sr No</th>
-                                            <th>Student Name</th>
-                                            <th>Date of Birth</th>
-                                            <th>Gender</th>
-                                            <th>Contact Number</th>
-                                            <th>Category</th>
-                                            <th>Blood Group</th>
-                                            <th>Email ID</th>
+                                            <th>Transaction Number</th>
+                                            <th>Paid Date</th>
+                                            <th>Amount Paid</th>
                                             <th>Edit</th>
-                                            <th>Delete</th>
-
-                                           
+                                              
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -212,7 +217,7 @@ if(!$_SESSION['admin'])
                                           die("Connection failed: " . $conn->connect_error);
                                           }
 
-                                          $sql = "SELECT * FROM student_info";
+                                          $sql = "SELECT * FROM payment_info";
                                           $result = $conn->query($sql);
 
                                           if ($result->num_rows > 0) {
@@ -221,15 +226,11 @@ if(!$_SESSION['admin'])
                                         ?>
                                         <tr>
                                             <td><?php echo $row["SR_NO"]; ?></td>
-                                            <td><?php echo $row["STUDENT_NAME"]; ?></td>
-                                            <td><?php echo $row["DOB"]; ?></td>
-                                            <td><?php echo $row["GENDER"]; ?></td>
-                                            <td><?php echo $row["CONTACT_NUMBER"]; ?></td>
-                                            <td><?php echo $row["CATEGORY"]; ?></td>
-                                            <td><?php echo $row["BLOOD_GROUP"]; ?></td>
-                                            <td><?php echo $row["EMAIL_ID"]; ?></td>
+                                            <td><?php echo $row["TRANSACTION_NO"]; ?></td>
+                                            <td><?php echo $row["PAID_DATE"]; ?></td>
+                                            <td><?php echo $row["FEE_PAID"]; ?></td>
                                             <td><a href="#"><img src="draw.png" height="20px" width="20px"></a></td>
-                                            <td><a href="delete.php?action='delete'&id=<?php echo $row['SR_NO'] ?> "><img src="delete.png" height="20px" width="20px" ></a></td>   
+                                               
                                         </tr>
                                         <?php }
                                         } else {
