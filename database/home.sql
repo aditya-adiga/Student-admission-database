@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2021 at 05:40 AM
+-- Generation Time: Jun 16, 2021 at 08:44 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `student_admission_management_system`
+-- Database: `home`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE `academic_info` (
 
 INSERT INTO `academic_info` (`SR_NO`, `MODE_OF_ADMISSION`, `STUDENT_RANK`, `SEMESTER`, `BRANCH`) VALUES
 (192001, 'Management', 'NA', 1, 'CSE'),
-(192002, 'Kcet', '8542', 1, 'EEE'),
+(192002, 'Comed-k', '8543', 1, 'IP'),
 (192003, 'Kcet', '1745', 1, 'ECE'),
 (192004, 'Comed-K', '15465', 1, 'ISE'),
 (192005, 'Kcet', '13456', 1, 'CSBS'),
@@ -64,7 +64,22 @@ INSERT INTO `academic_info` (`SR_NO`, `MODE_OF_ADMISSION`, `STUDENT_RANK`, `SEME
 (192022, 'Management', 'NA', 1, 'CSE'),
 (192023, 'Comed-K', '3000', 1, 'IT'),
 (192024, 'Management', 'NA', 1, 'CSE'),
-(192025, 'Kcet', '1400', 1, 'IT');
+(192025, 'Kcet', '1400', 1, 'IT'),
+(192026, 'Kcet', '3899', 1, 'CSBS'),
+(192027, 'Management', 'NA', 1, 'CSE'),
+(192028, 'Comed-K', '4800', 1, 'ISE'),
+(192029, 'Comed-K', '3700', 1, 'CSE'),
+(192030, 'Management', 'NA', 1, 'BT'),
+(192031, 'Comed-K', '8900', 1, 'IT'),
+(192032, 'Kcet', '13000', 1, 'CSBS'),
+(192033, 'Kcet', '27896', 1, 'ME'),
+(192034, 'Management', 'NA', 1, 'ME'),
+(192035, 'Management', 'NA', 1, 'ISE'),
+(192036, 'Kcet', '7895', 1, 'ISE'),
+(192037, 'Comed-K', '8340', 1, 'ME'),
+(192038, 'Kcet', '12890', 1, 'IT'),
+(192039, 'Management', 'NA', 1, 'BT'),
+(192040, 'Kcet', '12980', 1, 'CSBS');
 
 -- --------------------------------------------------------
 
@@ -77,7 +92,7 @@ CREATE TABLE `address_info` (
   `DOOR_NO` int(11) NOT NULL,
   `STREET` varchar(40) NOT NULL,
   `CITY` varchar(20) NOT NULL,
-  `STATE` char(15) NOT NULL,
+  `STATE_` char(15) NOT NULL,
   `PIN_CODE` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -85,7 +100,7 @@ CREATE TABLE `address_info` (
 -- Dumping data for table `address_info`
 --
 
-INSERT INTO `address_info` (`SR_NO`, `DOOR_NO`, `STREET`, `CITY`, `STATE`, `PIN_CODE`) VALUES
+INSERT INTO `address_info` (`SR_NO`, `DOOR_NO`, `STREET`, `CITY`, `STATE_`, `PIN_CODE`) VALUES
 (192001, 2659, 'VV Mohalla', 'Mysore', 'Karnataka', 570001),
 (192002, 27, 'Mittal Indl Estate Andheri Kurla Rd', 'Mumbai', 'Maharashtra', 400007),
 (192003, 74, 'Vasanth Nagar', 'Bangalore', 'Karnataka', 530068),
@@ -110,7 +125,22 @@ INSERT INTO `address_info` (`SR_NO`, `DOOR_NO`, `STREET`, `CITY`, `STATE`, `PIN_
 (192022, 22, 'Laxminder nagar', 'Davangere', 'Karnataka', 400045),
 (192023, 12, 'near st.thomas college', 'Pune', 'Maharashtra', 700016),
 (192024, 44, 'Green emerald', 'Mumbai', 'Maharashtra', 530047),
-(192025, 5432, '11th street behind al-habib', 'Wayanad', 'Kerala', 673675);
+(192025, 5432, '11th street behind al-habib', 'Wayanad', 'Kerala', 673675),
+(192026, 34, 'blue sapphaire', 'Udupi', 'Karnataka', 560089),
+(192027, 39, '17th cross', 'Mysore', 'Karnataka', 570008),
+(192028, 569, 'near imagica', 'Mumbai', 'Maharashtra', 570024),
+(192029, 38, 'sterling theatre', 'Mysore', 'Karnataka', 570008),
+(192030, 24, 'sabji mandi', 'Delhi', 'Delhi', 530068),
+(192031, 200, 'vidhyaranyapuram', 'Mysore', 'Karnataka', 570008),
+(192032, 46, 'jp nagar', 'Bangalore', 'Karnataka', 400067),
+(192033, 69, 'near kv school', 'Mumbai', 'Maharashtra', 570025),
+(192034, 678, 'garuda circle', 'Tumkur', 'Karnataka', 400007),
+(192035, 45, 'near mall of mysuru', 'Mysore', 'Karnataka', 570008),
+(192036, 26, 'andheri Kurla Rd', 'Mumbai', 'Maharashtra', 700016),
+(192037, 67, 'banshankri', 'Bangalore', 'Karnataka', 400007),
+(192038, 478, 'valachil', 'Mangalore', 'Karnataka', 450007),
+(192039, 87, 'kodailbel', 'Mangalore', 'Karnataka', 570089),
+(192040, 90, 'near golden temple', 'Amrithsar', 'Punjab', 789007);
 
 -- --------------------------------------------------------
 
@@ -134,6 +164,7 @@ INSERT INTO `branch_info` (`BRANCH`, `HOD_NAME`, `CONTACT_NUMBER`, `EMAIL_ID`, `
 ('BT', 'Dr. M.N. Nagendra Prasad', '080-25021', 'biotechnology@sjce.ac.in', 'BIOTECHNOLOGY'),
 ('CSBS', 'Dr. B S Mahanand', '080-25027', 'csbs@sjce.ac.in', 'INFORMATION SCIENCE AND ENGINEERING'),
 ('CSE', 'Dr.Pushpalatha M P', '080-25022', 'computerscience@sjce.ac.in', 'COMPUTER SCIENCE AND ENGINEERING'),
+('CTM', 'Dr. G. N. Chandradhara', '080-5577434', 'ctm@sjce.ac.in', 'CONSTRUCTION TECHNOLOGY AND MANAGEMENT'),
 ('CV', 'Dr. K. Prakash', '080-25023', 'civilengineering@sjce.ac.in', 'CIVIL ENGINEERING'),
 ('ECE', 'Dr. N Shankaraiah', '080-25024', 'electronicsandcommunication@sjce.ac.in', 'ELECTRONICS AND COMMUNICATION ENGINEERING'),
 ('EEE', 'Dr. M S. Shashikala', '080-25025', 'eletricalandelectronics@sjce.ac.in', 'ELECTRICAL AND ELECTRONICS ENGINEERING'),
@@ -185,7 +216,22 @@ INSERT INTO `parent_info` (`SR_NO`, `FATHER_NAME`, `MOTHER_NAME`, `CONTACT_NO`, 
 (192022, 'lokesh', 'anitha', '7345624345', 5403000),
 (192023, 'tunak', 'vijaya', '9635423654', 870000),
 (192024, 'arjit', 'sinchana', '8324643628', 5600000),
-(192025, 'atif', 'roopali', '9324653275', 233000);
+(192025, 'atif', 'roopali', '9324653275', 233000),
+(192026, 'ravi', 'ragini', '8933999933', 67000),
+(192027, 'arjun', 'arti', '8978675676', 900000),
+(192028, 'aryan', 'deepika', '9454676565', 290000),
+(192029, 'raghav', 'bina', '5768786675', 45000),
+(192030, 'bhairav', 'dhamini', '9087909756', 987888),
+(192031, 'badrinath', 'vibha', '6787098909', 78000),
+(192032, 'malinga', 'manvita', '3786787987', 200000),
+(192033, 'dilshan', 'nadiya', '9089787678', 360000),
+(192034, 'lalith', 'lalita', '4579808789', 430000),
+(192035, 'suraj', 'swati', '6784965689', 89000),
+(192036, 'dheeraj', 'dhanushree', '7009845343', 98000),
+(192037, 'dheemanth', 'dharini', '8909090945', 670000),
+(192038, 'adithya', 'adviti', '8947674774', 12000),
+(192039, 'darshan', 'dharshini', '4884784884', 78000),
+(192040, 'rajesh', 'rashmi', '9809874847', 490000);
 
 -- --------------------------------------------------------
 
@@ -218,18 +264,33 @@ INSERT INTO `payment_info` (`SR_NO`, `TRANSACTION_NO`, `PAID_DATE`, `FEE_PAID`) 
 (192010, 'PUNBRC2019081315479004', '13-08-2019', 45214),
 (192008, 'PUNBRC20190823012485690', '23-08-2019', 250000),
 (192014, 'PUNBRC2019082901124563', '29-08-2019', 250000),
+(192026, 'PUNBRC201908377878378', '04-09-2019', 36125),
 (192022, 'PUNBRC2019090501478562', '05-09-2019', 250000),
+(192036, 'PUNBRC201909298988072', '14-09-2019', 36125),
+(192034, 'PUNBRC201934678878789', '12-09-2019', 250000),
+(192038, 'PUNBRC201990289898999', '16-09-2019', 36125),
 (192001, 'SBINRC2019080815478264', '08-08-2019', 250000),
 (192025, 'SBINRC2019081810347516', '18-08-2019', 45214),
 (192006, 'SBINRC2019082200214563', '22-08-2019', 250000),
 (192023, 'SBINRC2019090614607834', '06-09-2019', 45214),
 (192012, 'SBINRC2019090800442165', '08-09-2019', 36125),
+(192037, 'SBINRC2019298899977298', '15-09-2019', 45214),
+(192030, 'SBINRC2019387898799793', '08-09-2019', 250000),
+(192035, 'SBINRC2019788929898999', '13-09-2019', 250000),
+(192027, 'SBINRC20198E9399399899', '05-09-2019', 250000),
+(192033, 'SBINRC2019980894567899', '11-09-2019', 36125),
 (192009, 'UBINRC2019081112457896', '11-08-2019', 45214),
 (192019, 'UBINRC2019081512014562', '15-08-2019', 45214),
 (192003, 'UBINRC2019082445621578', '24-08-2019', 36125),
 (192017, 'UBINRC2019091545785560', '15-09-2019', 44215),
 (192015, 'UTIBRC2019083022347856', '30-08-2019', 45214),
-(192013, 'UTIBRC2019090332014598', '03-09-2019', 45214);
+(192013, 'UTIBRC2019090332014598', '03-09-2019', 45214),
+(192039, 'UTIBRC2019298399389988', '17-09-2019', 250000),
+(192032, 'UTIBRC2019675662889928', '10-09-2019', 36125),
+(192031, 'UTIBRC2019783788899829', '09-09-2019', 45214),
+(192029, 'UTIBRC2019786756768679', '07-09-2019', 45214),
+(192028, 'UTIBRC2019882787687689', '06-09-2019', 45214),
+(192040, 'UTIBRC2019893793799993', '18-09-2019', 36125);
 
 -- --------------------------------------------------------
 
@@ -242,9 +303,9 @@ CREATE TABLE `student_info` (
   `STUDENT_NAME` char(50) NOT NULL,
   `DOB` varchar(50) NOT NULL,
   `GENDER` char(1) NOT NULL,
-  `BLOOD_GROUP` varchar(50) NOT NULL,
+  `CONTACT_NUMBER` varchar(50) NOT NULL,
   `CATEGORY` varchar(10) NOT NULL,
-  `CONTACT_NUMBER` varchar(13) NOT NULL,
+  `BLOOD_GROUP` varchar(13) NOT NULL,
   `EMAIL_ID` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -252,7 +313,7 @@ CREATE TABLE `student_info` (
 -- Dumping data for table `student_info`
 --
 
-INSERT INTO `student_info` (`SR_NO`, `STUDENT_NAME`, `DOB`, `GENDER`, `BLOOD_GROUP`, `CATEGORY`, `CONTACT_NUMBER`, `EMAIL_ID`) VALUES
+INSERT INTO `student_info` (`SR_NO`, `STUDENT_NAME`, `DOB`, `GENDER`, `CONTACT_NUMBER`, `CATEGORY`, `BLOOD_GROUP`, `EMAIL_ID`) VALUES
 (192001, 'Gowtam Kashyap', '10-01-2001', 'M', '8463257901', 'GM', 'A+', 'gowtam10@gmail.com'),
 (192002, 'Hitesh', '22-10-2001', 'M', '9423314785', 'OBC-1G', 'A+', 'hiteshhit22@gmail.com'),
 (192003, 'Aadhya', '01-04-2001', 'F', '7563014897', 'GM', 'A+', 'aadhya.2001@gmail.com'),
@@ -277,7 +338,22 @@ INSERT INTO `student_info` (`SR_NO`, `STUDENT_NAME`, `DOB`, `GENDER`, `BLOOD_GRO
 (192022, 'disha', '16-07-2001', 'F', '8745692354', 'GM', 'AB+', 'dish.26@gmail.com'),
 (192023, 'sushal', '12-01-2001', 'M', '9784215677', 'SC', 'A+', 'sushal22@gmail.com'),
 (192024, 'avinash', '02-02-2001', 'M', '9654785213', 'ST', 'A+', 'nanuavinash@gmail.com'),
-(192025, 'mahadev', '04-11-2001', 'M', '9954716548', 'GM', 'B+', 'mahadevmad@gmail.com');
+(192025, 'mahadev', '04-11-2001', 'M', '9954716548', 'GM', 'B+', 'mahadevmad@gmail.com'),
+(192026, 'vatsa', '13-12-2001', 'M', '9763553523', 'GM', 'A+', 'vatsa16@gmail.com'),
+(192027, 'Vinay', '09-03-2001', 'M', '9735675656', 'ST', 'B-', 'vinayrj@gmail.com'),
+(192028, 'supriya', '03-04-2001', 'F', '8976656565', 'SC', 'AB+', 'supriyacj@gmail.com'),
+(192029, 'keerthi', '19-03-2002', 'F', '7760474260', 'GM', 'AB-', 'keerthig@gmail.com'),
+(192030, 'spoorthi', '30-04-2001', 'F', '7865757673', 'OBC-3AG', 'O+', 'spoorthic@gmail.com'),
+(192031, 'pranav', '29-07-2001', 'M', '8834567633', 'OBC-2AG', 'A+', 'pranavraoka@gmail.com'),
+(192032, 'harshith', '31-01-2001', 'M', '9988776778', 'GM', 'B+', 'monty088@gmail.com'),
+(192033, 'bhuvan', '08-08-2001', 'M', '8967452310', 'GM', 'A-', 'bhuvanbam@gmail.com'),
+(192034, 'rajath', '25-12-2001', 'M', '1234567899', 'GM', 'O-', 'rajathshetty@gmail.com'),
+(192035, 'rohini', '06-04-2002', 'F', '7878969594', 'SC', 'A+', 'rohiniraga@gmail.com'),
+(192036, 'mansi', '18-05-2001', 'M', '9887766554', 'GM', 'A+', 'mansijha@gmail.com'),
+(192037, 'shambhavi', '31-03-2002', 'F', '9888676698', 'ST', 'B+', 'theshamus@gmail.com'),
+(192038, 'arpith', '04-12-2001', 'M', '9898977663', 'GM', 'B+', 'arpithshetty@gmail.com'),
+(192039, 'rohan', '08-04-2001', 'M', '8767687876', 'OBC-3AG', 'A+', 'rohanjja@gmail.com'),
+(192040, 'bhavana', '28-02-2002', 'F', '8234567545', 'GM', 'O+', 'bhavanahuranna@gmail.com');
 
 --
 -- Indexes for dumped tables
