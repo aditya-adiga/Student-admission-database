@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 ?>
                 <div class="card-body">
-                    <form action="addresssubmit.php" method="POST">
+                    <form method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Sr No</div>
                             <div class="value">
@@ -74,7 +74,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="textr" name="dno" value=<?php echo $row["DOOR_NO"]; ?>>
+                                            <input class="input--style-5" type="number" name="dno" value=<?php echo $row["DOOR_NO"]; ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@ $row = mysqli_fetch_array($result);
                             STREET='$street',      
                             CITY = '$city',   
                             STATE_ = '$state',
-                            PIN_CODE = '$pincode',
+                            PIN_CODE = '$pincode'
                             WHERE SR_NO='$srno'";
                             
                             if($conn->query($query) === TRUE) {
