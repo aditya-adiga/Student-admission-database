@@ -1,13 +1,16 @@
 <?php
 if($_POST)
 {
-    $host="localhost";
-    $user="root";
-    $pass="";
-    $db="admin";
+    $servername = "sql6.freesqldatabase.com";
+    $username = "sql6462764";
+    $password = "gKU6C5MxCY";
+    $dbname = "sql6462764";
+    $port="3306"
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname,$port);
       $username=$_POST['username'];
       $password=$_POST['password'];
-        $conn=mysqli_connect($host,$user,$pass,$db);
         $query="SELECT * from  login_detail where email_id='$username' and passcode='$password'";
     $result=mysqli_query($conn,$query);
         if(mysqli_num_rows($result)==1)

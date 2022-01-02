@@ -1,11 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "home";
+$servername = "sql6.freesqldatabase.com";
+$username = "sql6462764";
+$password = "gKU6C5MxCY";
+$dbname = "sql6462764";
+$port="3306"
 
 // Create connection
-$link = new mysqli($servername, $username, $password, $dbname);
+$link = new mysqli($servername, $username, $password, $dbname,$port);
 // Check connection
 if ($link->connect_error) {
 die("Connection failed: " . $link->connect_error);

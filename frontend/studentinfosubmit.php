@@ -1,9 +1,12 @@
 <?php
-$server='localhost';
-$username='root';
-$password='';
-$dbname = "home";
-$conn=mysqli_connect($server,$username,$password,$dbname);
+$servername = "sql6.freesqldatabase.com";
+$username = "sql6462764";
+$password = "gKU6C5MxCY";
+$dbname = "sql6462764";
+$port="3306"
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname,$port);
 
 if(isset($_POST['submit'])) {//Check it is coming from a form
 	$srno = $_POST["srno"]; 
