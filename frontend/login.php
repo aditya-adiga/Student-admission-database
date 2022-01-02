@@ -2,9 +2,9 @@
 if($_POST)
 {
     $servername = "sql6.freesqldatabase.com";
-    $username = "sql6462764";
-    $password = "gKU6C5MxCY";
-    $dbname = "sql6462764";
+    $username = "sql6462771";
+    $password = "7bdJPCzJi4";
+    $dbname = "sql6462771";
     $port="3306"
 
     // Create connection
