@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(!$_SESSION['admin'])
+{
+    header('location:login.php');
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,11 +43,14 @@
                     <h2 class="title">EDIT STUDENT INFORMATION</h2>
                 </div>
                 <?php
-$server='localhost';
-$username='root';
-$password='';
-$dbname = "home";
-$conn=mysqli_connect($server,$username,$password,$dbname);
+$servername = "sql6.freesqldatabase.com";
+$username = "sql6462764";
+$password = "gKU6C5MxCY";
+$dbname = "sql6462764";
+$port="3306"
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname,$port);
 $id=$_GET['id'];
 $sql="SELECT * FROM student_info
 WHERE SR_NO = $id ";

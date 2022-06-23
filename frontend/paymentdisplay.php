@@ -205,13 +205,14 @@ if(!$_SESSION['admin'])
                                     </thead>
                                     <tbody>
                                         <?php
-                                          $servername = "localhost";
-                                          $username = "root";
-                                          $password = "";
-                                          $dbname = "home";
+                                          $servername = "sql6.freesqldatabase.com";
+                                          $username = "sql6462764";
+                                          $password = "gKU6C5MxCY";
+                                          $dbname = "sql6462764";
+                                          $port="3306"
 
                                           // Create connection
-                                          $conn = new mysqli($servername, $username, $password, $dbname);
+                                          $conn = new mysqli($servername, $username, $password, $dbname,$port);
                                           // Check connection
                                           if ($conn->connect_error) {
                                           die("Connection failed: " . $conn->connect_error);

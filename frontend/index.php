@@ -178,12 +178,19 @@ if(!$_SESSION['admin'])
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
 
 <?php
-$con = mysqli_connect("localhost","root","",'home');
-if (!$con) {
+$servername = "sql6.freesqldatabase.com";
+$username = "sql6462764";
+$password = "gKU6C5MxCY";
+$dbname = "sql6462764";
+$port="3306"
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname,$port);
+if (!$conn) {
   die('Could not connect: ' . mysql_error());
 }
 
-$query = mysqli_query($con,"SELECT * FROM student_info");
+$query = mysqli_query($conn,"SELECT * FROM student_info");
 
 $number=mysqli_num_rows($query);
 echo $number;
