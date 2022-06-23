@@ -51,7 +51,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@ if(!$_SESSION['admin'])
                             <div class="name">Transaction Number</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="tno" >
+                                    <input class="input--style-5" type="text" name="tno" required>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date">
+                                            <input class="input--style-5" type="text" name="date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="amount">
+                                            <input class="input--style-5" type="number" name="amount" required>
                                         </div>
                                     </div>
                                 </div>

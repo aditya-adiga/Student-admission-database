@@ -51,7 +51,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@ if(!$_SESSION['admin'])
                             <div class="name">Father Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="fname" >
+                                    <input class="input--style-5" type="text" name="fname" required>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ if(!$_SESSION['admin'])
                             <div class="name">Mother Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mname" >
+                                    <input class="input--style-5" type="text" name="mname" required>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-refine">
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone">
+                                            <input class="input--style-5" type="text" name="phone" required>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="income">
+                                            <input class="input--style-5" type="number" name="income" required>
                                         </div>
                                     </div>
                                 </div>

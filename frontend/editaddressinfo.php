@@ -62,7 +62,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $row["SR_NO"]; ?>>
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $row["SR_NO"]; ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="dno" value=<?php echo $row["DOOR_NO"]; ?>>
+                                            <input class="input--style-5" type="number" name="dno" value=<?php echo $row["DOOR_NO"]; ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="street" value=<?php echo $row["STREET"]; ?>>
+                                            <input class="input--style-5" type="text" name="street" value=<?php echo $row["STREET"]; ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="city" value=<?php echo $row["CITY"]; ?>>
+                                            <input class="input--style-5" type="text" name="city" value=<?php echo $row["CITY"]; ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="state" value=<?php echo $row["STATE_"]; ?>>
+                                            <input class="input--style-5" type="text" name="state" value=<?php echo $row["STATE_"]; ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="pincode" value=<?php echo $row["PIN_CODE"]; ?>>
+                                            <input class="input--style-5" type="number" name="pincode" value=<?php echo $row["PIN_CODE"]; ?> required>
                                         </div>
                                     </div>
                                 </div>

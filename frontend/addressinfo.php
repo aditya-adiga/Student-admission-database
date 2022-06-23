@@ -51,7 +51,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
+                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?> required>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="textr" name="dno">
+                                            <input class="input--style-5" type="textr" name="dno" required>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="street">
+                                            <input class="input--style-5" type="text" name="street" required>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="city">
+                                            <input class="input--style-5" type="text" name="city" required>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="state">
+                                            <input class="input--style-5" type="text" name="state" required>
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="pincode">
+                                            <input class="input--style-5" type="number" name="pincode" required>
                                         </div>
                                     </div>
                                 </div>

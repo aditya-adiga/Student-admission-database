@@ -51,7 +51,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $id ?>>
+                                            <input class="input--style-5" type="number" required name="srno" value=<?php echo $id ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ if(!$_SESSION['admin'])
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="mod">
+                                        <select name="mod" required>
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option>KCET</option>
                                             <option>Comed-k</option>
@@ -80,7 +80,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srank">
+                                            <input class="input--style-5" type="number" name="srank" required>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ if(!$_SESSION['admin'])
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="sem">
+                                        <select name="sem" required>
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -113,7 +113,7 @@ if(!$_SESSION['admin'])
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="branch">
+                                        <select name="branch" required>
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option value="CV">Civil Engineering</option>  
                                             <option value="ME">Mechanical Engineering</option>  

@@ -62,7 +62,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno" value=<?php echo $row["SR_NO"]; ?>>
+                                            <input class="input--style-5" type="number" required name="srno" value=<?php echo $row["SR_NO"]; ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srank" value=<?php echo $row["STUDENT_RANK"]; ?>>
+                                            <input class="input--style-5" type="number" name="srank" required value=<?php echo $row["STUDENT_RANK"]; ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@ $row = mysqli_fetch_array($result);
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="sem">
+                                        <select name="sem" required>
                                             <option value=<?php echo $row["SEMESTER"]; ?>><?php echo $row["SEMESTER"]; ?></option>
                                             <option>1</option>
                                             <option>2</option>
@@ -124,7 +124,7 @@ $row = mysqli_fetch_array($result);
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="branch">
+                                        <select name="branch" required>
                                             <option value=<?php echo $row["BRANCH"]; ?>><?php echo $row["BRANCH"]; ?></option>
                                             <option value="CV">Civil Engineering</option>  
                                             <option value="ME">Mechanical Engineering</option>  

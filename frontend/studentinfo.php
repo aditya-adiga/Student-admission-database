@@ -50,7 +50,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="srno">
+                                            <input class="input--style-5" type="number" name="srno" required>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@ if(!$_SESSION['admin'])
                             <div class="name">Student Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="sname" >
+                                    <input class="input--style-5" type="text" name="sname" required>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="date">
+                                            <input class="input--style-5" type="text" name="date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@ if(!$_SESSION['admin'])
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
+                                        <select name="gender" required>
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -97,7 +97,7 @@ if(!$_SESSION['admin'])
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bg">
+                                        <select name="bg" required>
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option>A+</option>
                                             <option>A-</option>
@@ -117,7 +117,7 @@ if(!$_SESSION['admin'])
                             <div class="name">Category</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="category" >
+                                    <input class="input--style-5" type="text" name="category" required>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-refine">
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone">
+                                            <input class="input--style-5" type="text" name="phone" required>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@ if(!$_SESSION['admin'])
                                 <div class="row row-refine">
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="mailid">
+                                            <input class="input--style-5" type="text" name="mailid" required>
                                         </div>
                                     </div>
                                 </div>
